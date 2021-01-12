@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container pt-4">
+  <h1>Decipher your image!</h1>
+  <hr />
+  <form action="/descifrado_image" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="file" name="archivo" id="file" />
+    </div>
+    <div class="form-group">
+      <p>Select the operation mode:</p>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="modo"
+          value="CBC"
+        />
+        <label class="form-check-label">CBC</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="modo"
+          value="CFB"
+        />
+        <label class="form-check-label">CFB</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="modo"
+          value="ECB"
+        />
+        <label class="form-check-label">ECB</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="modo"
+          value="OFB"
+        />
+        <label class="form-check-label">OFB</label>
+      </div>
+    </div>
+    <div>
+      <input type="password" name="llave" placeholder="Automatic generation" />
+      <input type="submit" />
+    </div>
+  </form>
+  <hr />
+  <div id="preview"></div>
+</div>
+{% endblock %}

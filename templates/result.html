@@ -1,0 +1,6 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container pt-4">
+  <h1>Operation completed!</h1><hr>
+  <img src="{{url_for('static', filename=filename)}}">
+</div>
+{% endblock %}
